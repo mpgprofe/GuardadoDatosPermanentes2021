@@ -8,14 +8,15 @@
 
     <EditText
         android:id="@+id/editTextNombre"
-        android:layout_width="311dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginStart="49dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginEnd="49dp"
         android:ems="10"
         android:hint="Nombre"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextEdad"
+        app:layout_constraintBottom_toTopOf="@+id/buttonBorrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,40 +26,74 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Borrar"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonRecuperar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/buttonRecuperar"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonRecuperar"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/buttonGuardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="66dp"
         android:text="Guardar"
-        app:layout_constraintEnd_toStartOf="@+id/buttonRecuperar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNombre" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonRecuperar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
         android:text="Recuperar"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonGuardar"
-        app:layout_constraintEnd_toStartOf="@+id/buttonBorrar"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNombre"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintBottom_toTopOf="@+id/editTextEdad"
+        app:layout_constraintEnd_toEndOf="@+id/editTextEdad"
+        app:layout_constraintStart_toEndOf="@+id/editTextEdad" />
 
     <EditText
         android:id="@+id/editTextEdad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
-        android:layout_marginBottom="540dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="Edad"
         android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/buttonGuardar"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNombre" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonGuardar" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="24dp"
+        android:text="Género"
+        android:textOff="Sí"
+        android:textOn="No"
+        app:layout_constraintStart_toStartOf="@+id/editTextEdad"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEdad" />
+
+    <Button
+        android:id="@+id/buttonHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:background="@color/design_default_color_secondary"
+        android:backgroundTint="#A62B2B"
+        android:backgroundTintMode="src_in"
+        android:text="Seleccionar Hora"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch1" />
+
+    <TextView
+        android:id="@+id/textViewHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:text="TextView"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonHora" />
 </androidx.constraintlayout.widget.ConstraintLayout>

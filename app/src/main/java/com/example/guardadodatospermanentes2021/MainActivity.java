@@ -23,6 +23,7 @@ static final String EDAD = "EDAD";
         buttonBorrar = findViewById(R.id.buttonBorrar);
         buttonGuardar = findViewById(R.id.buttonGuardar);
         buttonRecuperar = findViewById(R.id.buttonRecuperar);
+        editTextEdad = findViewById(R.id.editTextEdad);
 
         buttonGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,6 +31,7 @@ static final String EDAD = "EDAD";
                 SharedPreferences misDatos = getSharedPreferences(NOMBRE_FICHERO, MODE_PRIVATE);
                 SharedPreferences.Editor editor = misDatos.edit();
                 editor.putString(NOMBRE,editTextNombre.getText().toString());
+                editor.putInt(EDAD, Integer.parseInt(editTextEdad.getText().toString()));
                 editor.apply();
             }
         });
@@ -39,6 +41,8 @@ static final String EDAD = "EDAD";
             public void onClick(View view) {
                 SharedPreferences misDatos = getSharedPreferences(NOMBRE_FICHERO, MODE_PRIVATE);
                 editTextNombre.setText(misDatos.getString(NOMBRE,"-- sin guardar --"));
+                editTextEdad.setText(String.valueOf(misDatos.getInt(EDAD, 0)));
+
             }
         });
 
